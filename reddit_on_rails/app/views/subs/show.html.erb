@@ -1,0 +1,7 @@
+<h1>This is ONE of the subs</h1>
+<h2><%= @sub.title %></h2>
+moderated by <a href=" <%= user_url(@sub.moderator)%> "><%= @sub.moderator.username %></a> <br>
+<p><%= @sub.description %></p>
+
+<a href="<%= subs_url %>">Back to ALL the subs</a><br>
+<a href="<%= edit_sub_url(@sub) %>">Edit THIS sub... if it belongs to you</a>
