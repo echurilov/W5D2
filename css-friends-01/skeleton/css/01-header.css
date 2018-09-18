@@ -51,3 +51,8 @@ nav li {
 nav li:hover {
   background-color: black;
 }
+
+.w3-badge {
+  background-color: black;
+  border-radius:50%;
+}
