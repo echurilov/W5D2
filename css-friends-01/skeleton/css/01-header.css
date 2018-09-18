@@ -1,0 +1,53 @@
+/* PHASE 1: Header */
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300, 400, 700;
+  font-size: 36px, 24px, 16px, 14px, 12px;
+  /* background-color: black; */
+}
+
+header {
+  background-color: red;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left-nav > ul,
+.right-nav > ul {
+
+}
+
+.left-nav {
+  display: flex;
+  justify-content: flex-start;
+
+}
+
+.right-nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.right-nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  justify-content: space-between;
+}
+
+nav li {
+  border-left: 1px solid white;
+  display: flex;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
+
+nav li:hover {
+  background-color: black;
+}
