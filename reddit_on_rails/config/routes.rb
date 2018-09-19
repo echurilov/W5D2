@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
-  resources :posts, only: [:destroy]
   resource :session, only: [:new, :create, :destroy]
   resources :users
   resources :subs do 
-    resources :posts, except: [:destroy]
+    resources :tops, except: [:destroy]
   end
+  resources :tops, only: [:destroy] do
+    resources :comments, except: [:destroy]
+  end
+  resources :comments, only: [:destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

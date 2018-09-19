@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :bigint(8)        not null, primary key
+#  username        :string           not null
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
 class User < ApplicationRecord
   validates_presence_of :username, :password_digest, :session_token, message: "must exist"
   validates_length_of :password, minimum: 6, allow_nil: true, message: "must be at least 6 chars"
@@ -14,6 +26,10 @@ class User < ApplicationRecord
   primary_key: :id,
   foreign_key: :author_id,
   class_name: :Post
+  
+  has_many :comments,
+  foreign_key: :author_id,
+  class_name: :Comment
   
   attr_reader :password
   
