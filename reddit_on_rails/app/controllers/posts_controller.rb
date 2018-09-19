@@ -5,9 +5,9 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.author_id = current_user.id
-    @post.sub_id = Sub.find_by(id: params[:id]).id
+    @post.sub_id = Sub.find(params[:sub_id]).id
     if @post.save
-      redirect_to post_url(@post)
+      redirect_to sub_post_url(@post.sub_id, @post.id)
     else
       flash.now[:errors] = @post.errors.full_messages
       render :new
@@ -24,7 +24,7 @@ class PostsController < ApplicationController
     if @post.update
       redirect_to post_url(@post)
     else
-      flash.now[:errors] = 'Dwight you ignorant slut'
+      flash.now[:errors] = ['Dwight you ignorant slut']
       render :edit
     end
   end

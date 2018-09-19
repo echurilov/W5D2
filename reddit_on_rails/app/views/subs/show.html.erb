@@ -5,3 +5,12 @@ moderated by <a href=" <%= user_url(@sub.moderator)%> "><%= @sub.moderator.usern
 
 <a href="<%= subs_url %>">Back to ALL the subs</a><br>
 <a href="<%= edit_sub_url(@sub) %>">Edit THIS sub... if it belongs to you</a>
+
+<% if @sub.posts %>
+  <h3>Posts</h3>
+  <ul>
+    <% @sub.posts.each do |post| %>
+      <li><a href="<%= sub_post_url(@sub,post) %>"><%= post.title %></a></li>
+    <% end %>
+  </ul>
+<% end %>

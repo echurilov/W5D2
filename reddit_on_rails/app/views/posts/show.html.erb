@@ -1,2 +1,4 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<h1> <a href="<%= @post.url %>"><%= @post.title %></a> </h1>
+<p>posted by <a href="<%= user_url(@post.author) %>"><%= @post.author.username %></a> at <%= @post.created_at %></p>
+<p><%= @post.content %></p>
+
